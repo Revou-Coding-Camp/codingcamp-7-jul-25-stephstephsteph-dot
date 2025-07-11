@@ -1,0 +1,49 @@
+body{
+    background-color: aliceblue;
+    padding-left: 420px;
+    padding-top: 150px;
+}
+
+.isi-container{
+    background-color:lightpink;
+    width: 350px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:10px;
+    padding-bottom: 20px;
+    border-style:solid;
+    font-family: monospace;
+    
+}
+
+button{
+    background-color: bisque;
+    font-family: monospace;
+}
+
+h1{
+    color:darkred;
+    padding-left: 100px;
+    background-color: cornsilk;
+    border-style:solid;
+    border-color: black;
+}
+
+
+input{
+    background-color: cornsilk;
+    font-family: monospace;
+}
+
+#todo{
+    width:190px;
+}
+
+#table-output{
+    width: 345px;
+    margin-left: 3px;
+    background-color:cornsilk;
+    border-style: solid;
+    border-color: black;
+    color:darkred;
+}
