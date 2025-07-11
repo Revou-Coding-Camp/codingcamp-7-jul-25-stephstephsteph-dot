@@ -49,6 +49,38 @@ function DeleteAllTask() {
     }
 }
 
+let clickcount=0;
+
 function FilterTask() {
-    
+    const filteran = document.getElementById("filter");
+    const checkboxeu = document.getElementById("cekboks");
+    const baris = tabeloutput.getElementsByTagName("tr");
+
+    clickcount++;
+
+    if (clickcount === 1) {
+        // First click: Show or hide rows based on checkbox status
+        for(let i = baris.length - 1; i > 0; i--) {
+            if(checkboxeu&&checkboxeu.checked){
+                baris[i].style.display="";
+            } else {
+                baris[i].style.display="none";
+            }
+        }
+    } else if (clickcount === 2) {
+        // Second click: Invert the previous filter
+        for(let i = baris.length - 1; i > 0; i--) {
+            if(checkboxeu&&checkboxeu.checked){
+                baris[i].style.display = "none";
+            } else {
+                baris[i].style.display="";
+            }
+        }
+    } else {
+        // Third click or beyond: Reset everything and start over
+        for(let i = baris.length - 1; i > 0; i--){
+            baris[i].style.display = "";
+        }
+        clickcount = 0; // Reset the counter
+    }
 }
