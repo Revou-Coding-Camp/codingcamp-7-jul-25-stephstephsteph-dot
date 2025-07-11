@@ -1,38 +1,54 @@
 console.log('Javascript is running!');
-let tasks = [];
+let inputan = []; //ini nanti buat menampung inputan dari user
+const tabeloutput = document.getElementById("table-output");
 
-function addTask(){
-    const todoo = document.getElementById("todo");
-    const tngll = document.getElementById("tngl");
+function AddTask() {
+    const todoinput = document.getElementById("todo");
+    const tanggalinput = document.getElementById("tngl");
+    console.log("Adding task:", todoinput.value, "Due Date:", tanggalinput.value);
 
-    if(todoo.value === "" || tngll === ""){
-        alert("Please fill in both task and due date!");
+    if (todoinput.value === "" || tanggalinput.value===""){
+        alert("Please fill in both task and due date.") //misal ada yg gak keisi, nanti dikasih warning
     } else {
-        const newTask = {
-            task:todoo.value,
-            dueDate:tngll.value,
-            completed: false,
-        };
 
-        tasks.push(newTask);
+        inputan.push(todoinput.value); //masukkin inputan task ke list inputan
+        inputan.push(tanggalinput.value); //masukkin inputan tanggalan ke list inputan
 
-        todoo.value="";
-        tngll.value="";
+        todoinput.value = ''; //kosongin value todoinput
+        tanggalinput.value=''; //kosongin value tanggalinput
 
-        console.log('New task added:', newTask);
+        DisplayTask();
 
     }
 }
 
-function displaytask() {
-    const tasklist = document.getElementById("task-list");
+function DisplayTask() {
+ 
+    var tableContent = '<tr>'; // coding buat nambah baris baru di table output
+    
+    //isian dari inputan dimasukkin satu-satu ke dalam tabel berdasarkan urutan kolom
+    for (let index = 0; index < inputan.length; index++) {
+        tableContent += "<td>" + inputan[index] + "</td>";
+    } 
+
+    //nambahin checkbox juga utk kolom status sekalian selesain codingan untuk bikin 1 row baru di tabel output
+    tableContent += '<td><input type="checkbox" id="cekboks"><td>' + '</tr><tr>';
+    
+    //habis itu masukkin codingannya ke tabel
+    tabeloutput.innerHTML += tableContent
+    
+     //kosongin list buat input yg baru lagi
+    inputan = [];
 }
 
-function deletealltask(){
-    tasks=[];
-    displaytasks();
-    console.log("All task deleted");
+function DeleteAllTask() {
+
+    //hapusnya pakai looping per column dihilangin
+    for(let i = tabeloutput.rows.length - 1; i > 0; i--){
+        tabeloutput.deleteRow(i);
+    }
 }
 
-function filtertask(){
+function FilterTask() {
+    
 }

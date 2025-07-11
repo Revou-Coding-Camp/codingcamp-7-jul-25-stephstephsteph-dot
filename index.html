@@ -11,26 +11,24 @@
         <h1>TO DO LIST</h1>
         <div class="kontennya">
             <table id="tableinput">
-                <form id="form_submit" onsubmit=addTask()>
-                    <tr id="mintadata">
-                        <td><input type="text" id="todo" placeholder="Add a todo..."></input></td>
-                        <td><input type="date" id="tngl" placeholder="mm/dd/yyyy" width="100px"></input></td>
-                        <td><button id="tambah" type="button">+</button></td>
+                <form id="form_submit">
+                    <tr>
+                        <td><input type="text" id="todo" placeholder="Add a task.."></input></td>
+                        <td><input type="date" id="tngl" placeholder="Add a due date..."></input></td>
+                        <td><button type="button" id="tambah" onclick="AddTask();">+</button></td>
                     </tr>
                 </form>
                 <tr>
-                    <td><form id="form_filter"><button id="filter">FILTER</button></form></td>
-                    <td colspan="2"><form id="form_delete"><button style="float: right" id="deleteall">DELETE ALL</button></form></td>
+                    <td><button type="button" id="filter">FILTER</button></td>
+                    <td colspan="2"><button type="button" style="float: right" id="deleteall" onclick="DeleteAllTask();">DELETE ALL</button></td>
                 </tr>
             </table>
             <br>
-            <div id="peringatan"></div>
             <table id="table-output">
                 <tr>
                     <th id="task">TASK</th>
                     <th id="due_date">DUE DATE</th>
                     <th>STATUS</th>
-                    <th>ACTIONS</th>
                 </tr>
             </table>
         </div>

@@ -1,7 +1,6 @@
 body{
     background-color: aliceblue;
-    padding-left: 420px;
-    padding-top: 150px;
+    place-items: center;
 }
 
 .isi-container{
@@ -46,4 +45,5 @@ input{
     border-style: solid;
     border-color: black;
     color:darkred;
+    text-align: center;
 }
